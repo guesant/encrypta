@@ -45,6 +45,26 @@ class Encrypta{
     }
     return $finalString;
   }
+
+  // Decrypta work
+  protected function decryptaEngine($str, $rot, $kutter){
+    // Functional var's
+    $initialString = $str;
+    $finalString = "";    
+
+    // str to array
+    $splitInitial = str_split($initialString);
+
+    // Inverted Caesar Chipher
+    foreach ($splitInitial as $key => $value) {
+      $position = strpos($kutter, $value);
+      $newChar = $kutter[($position - $rot) % strlen($kutter)];
+
+      $finalString .= $newChar;
+    }
+    $finalString = base64_decode($finalString);
+    return $finalString;
+  }
 }
 
 ?>
