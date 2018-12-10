@@ -8,6 +8,11 @@ class Encrypta{
 
   // Set the kutter
   public function setKutter($kutter = ""){
+    $kutter = filter_var($kutter, FILTER_SANITIZE_STRING);
+    
+    if(strlen($kutter) < 65){
+      $kutter = "cfEbULjpTQ9ASZFhd7lHqtz24XWueIG3wVvRmak/o+riMKsC0BNPY=D6Jxy815nOg";
+    }
     $this->kutter = $kutter;    
   }
 
