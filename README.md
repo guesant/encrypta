@@ -3,7 +3,7 @@ Encrypta is an encryption algorithm. An improved version of the Caesar's Cipher.
 
 ## Installation & Usage
 
-Encrypta is in various programming languages. Visit [our Wiki](https://github.com/jipacoding/encrypta/wiki/Wiki) and see available languages.
+Encrypta is in various programming languages. Visit [this link](https://github.com/jipacoding/encrypta/wiki/Programming-Languages) and see available languages.
 
 ## Contributing
 
