@@ -45,7 +45,6 @@ class Encrypta{
     }
     return $finalString;
   }
-
   // Decrypta work
   protected function decryptaEngine($str, $rot, $kutter){
     // Functional var's
@@ -64,6 +63,70 @@ class Encrypta{
     }
     $finalString = base64_decode($finalString);
     return $finalString;
+  }
+
+  // Encrypta to Final-User
+  public function encrypta($str = "", $rot = 7, $stps = 2){
+    if($stps < 1){
+      return $str;
+    }
+
+    $kutter = $this->kutter;
+    
+    // Set Current step 
+    $curStep = 0;
+
+    // Starter Surrent Step
+    $enc = $this->encryptaEngine($str, $rot, $kutter);
+    $curStep += 1;
+
+    // more 'n more
+    while ($curStep < $stps) {
+      $kutter = strrev($kutter);
+      $enc = strrev($enc);
+
+      $enc = $this->encryptaEngine($enc, $rot, $kutter);
+
+      $curStep += 1;
+    }   
+
+
+    return $enc;
+  }  
+
+  // Decrypta to Final-User
+  public function decrypta($str = "", $rot = 7, $stps = 2){
+    if($stps < 1){
+      return $str;
+    }
+
+    $kutter = $this->kutter;
+
+    if($stps % 2 == 0){
+      $kutter = strrev($kutter);
+    }
+
+    $coiso = $str;
+    // Set Current step 
+    $curStep = $stps;
+
+    // more 'n more
+    while ($curStep > 1) {
+      $coiso = $this->decryptaEngine($coiso, $rot, $kutter);
+      
+      
+      $kutter = strrev($kutter);
+      $coiso = strrev($coiso);
+
+      $curStep -= 1;
+    }
+    
+    
+    $coiso = $this->decryptaEngine($coiso, $rot, $kutter); 
+    $curStep -= 1;
+
+    return $coiso;
+     
   }
 }
 
