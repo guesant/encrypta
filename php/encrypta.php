@@ -26,6 +26,25 @@ class Encrypta{
     // Return new Kutter;
     return $newKut;
   }
+
+  // Encrypta work
+  protected function encryptaEngine($str, $rot, $kutter){
+    // Functional var's
+    $initialString = base64_encode($str); // Support non-latim symbols. Like chinese, arabic language.
+    $finalString = ""; // Encrypta string
+
+    // str to array
+    $splitInitial = str_split($initialString);
+    
+    // Caesar chipher function
+    foreach ($splitInitial as $key => $value) {
+      $position = strpos($kutter, $value);
+      $newChar = $kutter[($position + $rot) % strlen($kutter)];
+
+      $finalString .= $newChar;
+    }
+    return $finalString;
+  }
 }
 
 ?>
