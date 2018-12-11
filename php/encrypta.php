@@ -2,7 +2,7 @@
 class Encrypta{
   private $kutter;
 
-  function __construc($theKutter = ""){
+  function __construct($theKutter = ""){
     $this->setKutter($theKutter);
   }
 
@@ -31,9 +31,19 @@ class Encrypta{
     // Return new Kutter;
     return $newKut;
   }
+  
+  // BUGFIX. The PHP don't have a real module operation.
+  private function realMod($a, $b){
+    $mod = $a % $b;
+    if ($mod < 0)
+    {
+      $mod += abs($b);
+    }
+    return $mod;
+  }
 
   // Encrypta work
-  protected function encryptaEngine($str, $rot, $kutter){
+  private function encryptaEngine($str, $rot, $kutter){
     // Functional var's
     $initialString = base64_encode($str); // Support non-latim symbols. Like chinese, arabic language.
     $finalString = ""; // Encrypta string
@@ -44,14 +54,18 @@ class Encrypta{
     // Caesar chipher function
     foreach ($splitInitial as $key => $value) {
       $position = strpos($kutter, $value);
-      $newChar = $kutter[($position + $rot) % strlen($kutter)];
+
+      // BUGFIX
+      $mod = $this->realMod(($position + $rot), strlen($kutter));
+
+      $newChar = $kutter[$mod];
 
       $finalString .= $newChar;
     }
     return $finalString;
   }
   // Decrypta work
-  protected function decryptaEngine($str, $rot, $kutter){
+  private function decryptaEngine($str, $rot, $kutter){
     // Functional var's
     $initialString = $str;
     $finalString = "";    
@@ -62,10 +76,15 @@ class Encrypta{
     // Inverted Caesar Chipher
     foreach ($splitInitial as $key => $value) {
       $position = strpos($kutter, $value);
-      $newChar = $kutter[($position - $rot) % strlen($kutter)];
+
+      // BUGFIX
+      $mod = $this->realMod(($position + $rot), strlen($kutter));
+
+      $newChar = $kutter[$mod];
 
       $finalString .= $newChar;
     }
+    
     $finalString = base64_decode($finalString);
     return $finalString;
   }
