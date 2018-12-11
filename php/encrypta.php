@@ -78,13 +78,13 @@ class Encrypta{
       $position = strpos($kutter, $value);
 
       // BUGFIX
-      $mod = $this->realMod(($position + $rot), strlen($kutter));
+      $mod = $this->realMod(($position - $rot), strlen($kutter));
 
       $newChar = $kutter[$mod];
 
       $finalString .= $newChar;
     }
-    
+
     $finalString = base64_decode($finalString);
     return $finalString;
   }
