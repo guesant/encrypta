@@ -7,7 +7,7 @@ Encrypta is based on the [Caesar's Chipher](https://en.wikipedia.org/wiki/Caesar
 
 * ### What's the difference?
   * ### Random Shift
-    Instead of using a plain-alphabet for the displacement (abcde...), Encrypta uses a random alphabet with 65 latin-characters. You can generate another one at any time. This alphabet is called Kutter.  
+    Instead of using a plain-alphabet for the displacement (abcde...), Encrypta uses a list of 65 characters. You can generate another at any time. This list is called Kutter.
 
   * ### Support all alphabets and symbols
     EncryptaEngine uses the base64 encoding method. It converts the characters into text-mode representations. That is, EncryptaEngine supports Chinese language, Russian language, emojis etc.
