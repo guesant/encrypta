@@ -1,11 +1,11 @@
-**Prefere Português? [Clique aqui](https://github.com/jipacoding/encrypta/wiki/Encrypta-em-Portugu%C3%AAs-BR) para ler nessa língua maravilhsosa.**
+**Prefere Português? [Clique aqui](docs/pt-br/README.md) para ler nessa língua maravilhsosa.**
 
 ## Goals
 - Supports all alphabets and symbols
 - Bi-directional encryption
 
 ## Installation & Usage
-Encrypta is in various programming languages. Visit [this link](https://github.com/jipacoding/encrypta/wiki/Programming-Languages) and see available languages.
+Encrypta is in various programming languages. Visit [this link](docs/en-us/Install-Encrypta) and see available languages.
 
 ## Algorithm
 Encrypta is based on the [Caesar's Chipher](https://en.wikipedia.org/wiki/Caesar_cipher), but her standard mode is not safe 😓.
