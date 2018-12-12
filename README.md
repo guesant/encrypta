@@ -1,4 +1,6 @@
-**Prefere Português? [Clique aqui](https://github.com/jipacoding/encrypta/wiki/Encrypta-em-Portugu%C3%AAs-BR) para ler nessa língua maravilhsosa**
+**Prefere Português? [Clique aqui](https://github.com/jipacoding/encrypta/wiki/Encrypta-em-Portugu%C3%AAs-BR) para ler nessa língua maravilhsosa.**
+
+_estou falando da Língua Portuguesa, sem viadagem por favor_ 😂
 
 ## Goals
 - Supports all alphabets and symbols
