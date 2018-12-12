@@ -60,13 +60,13 @@ For better security, you can define the rotation and encryption steps.
   By default, the rotation value is 7. You can change this value. See the example:
   
   ```py
-  # Rotação Padrão
+  # Default Rotation
   encryptaEngine.encrypta("a") # yKYYZtWW
   encryptaEngine.encrypta("a", 7) # yKYYZtWW
   ```
 
   ```py
-  # Rotação Modificada
+  # Changed Rotation  
   encryptaEngine.encrypta("a", 8) # 38jHB=PP
   ```
 
@@ -76,13 +76,13 @@ For better security, you can define the rotation and encryption steps.
 * ### Steps
   By default, the value is 2. You can change this value. See the example:
   ```py
-  # Passos Padrões
+  # Default Steps
   encryptaEngine.encrypta("a", 7) # yKYYZtWW
   encryptaEngine.encrypta("a", 7, 2) # yKYYZtWW
   ```
 
   ```py
-  # Passos Modificados
+  # Changed Steps
   encryptaEngine.encrypta("a", 7, 3) # toYV=OOMHxgm
   ```
   _Remembering that the result varies according to Kutter_
